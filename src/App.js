@@ -1,26 +1,31 @@
 function App() {
 
-  const names = [
-      {
-          id: '1',
-          title: 'Alice',
-          phone: '800 500'
-      },
-      {
-      
-          id: '22a',
-          title: 'Bob',
-          phone: '500 200'
-      },
-  ];
+    const helloClick = () => {
+        console.log('HELLO!!!')
+    };
 
-  return (
-   <div>
-       <ul>
-       {names.map(el => <li key={el.id}>{el.title} {el.phone}</li>)}
-       </ul>
-      </div>
-  );
+    const plusNumber = (n) => {
+        console.log('Number ' , n)
+    };
+
+    const onChangeName = (event) => {
+        console.log(event.target.value)
+        
+    };
+
+
+    return (
+     <div className="App">
+         <button onClick={helloClick}>Hello</button>
+         <button onClick={() => console.log('Plus')}>Plus</button>
+         <button onClick={() => plusNumber(123)}>Plus Number</button> 
+
+         <hr/>
+         
+         <input onChange={onChangeName}/>
+
+         </div>
+    );
 }
 
 export default App;
